@@ -1,6 +1,6 @@
 # Protocol Buffers Benchmarks
 
-Simple benchmarks of [Protocol Buffer](https://developers.google.com/protocol-buffers) vs. JSON serialization and deserialization and payload size in Go and Node.js. No gzip.
+Simple benchmarks of [Protocol Buffer](https://developers.google.com/protocol-buffers) and JSON serialization and deserialization and payload size in Go and Node.js. No gzip.
 
 Go benchmark code based on code in [this talk](https://www.youtube.com/watch?v=27swR9HACWU).
 
