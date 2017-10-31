@@ -1,10 +1,10 @@
 # Protocol Buffers Benchmarks
 
-Simple benchmarks of [Protocol Buffer](https://developers.google.com/protocol-buffers) and JSON serialization and deserialization and payload size in Go and Node.js. No gzip.
+Simple benchmarks of [Protocol Buffer](https://developers.google.com/protocol-buffers) and JSON.
 
-Go benchmark code based on code in [this talk](https://www.youtube.com/watch?v=27swR9HACWU).
+In Go serialization and deserialization speed is benchmarked. Go benchmark code based on code in [this talk](https://www.youtube.com/watch?v=27swR9HACWU).
 
-For Node.js benchmarks both `protoc` generated code and code using [protobuf.js](https://github.com/dcodeIO/ProtoBuf.js/).
+For Node.js benchmarks serialization and deserialization speeds using both `protoc` and [protobuf.js](https://github.com/dcodeIO/ProtoBuf.js/). Also benchmarks serialized sizes for a few scenarios. No compression is applied.
 
 ## Installation
 
