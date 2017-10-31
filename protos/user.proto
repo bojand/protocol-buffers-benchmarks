@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package usertest;
+
+message User {
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+    string twitter = 4;
+    string street = 5;
+    string city = 6;
+    string state = 7;
+    string zip = 8;
+    string phone = 9;
+}
+
+message Users {
+    repeated User users = 1;
+}
