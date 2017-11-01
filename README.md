@@ -51,16 +51,16 @@ BenchmarkUserJSONUnmarshal-8     	  300000	      4570 ns/op
 #### Node.js
 
 ```sh
-Protobufjs decode x 1,149,081 ops/sec ±1.28% (86 runs sampled)
-protoc deserialize x 567,928 ops/sec ±1.56% (87 runs sampled)
-JSON parse x 698,089 ops/sec ±1.98% (86 runs sampled)
-Fastest is Protobufjs decode
-Slowest is protoc deserialize
-Protobufjs decode x 1,165,148 ops/sec ±1.21% (88 runs sampled)
-protoc deserialize x 553,889 ops/sec ±1.24% (86 runs sampled)
-JSON parse x 712,985 ops/sec ±1.21% (86 runs sampled)
-Fastest is Protobufjs decode
-Slowest is protoc deserialize
+Protobufjs encode() x 747,715 ops/sec ±1.02% (89 runs sampled)
+protoc serializeBinary() x 380,575 ops/sec ±1.29% (90 runs sampled)
+JSON stringify() x 974,705 ops/sec ±1.02% (90 runs sampled)
+Fastest is JSON stringify()
+Slowest is protoc serializeBinary()
+Protobufjs decode() x 1,148,161 ops/sec ±1.13% (91 runs sampled)
+protoc deserializeBinary() x 578,055 ops/sec ±1.25% (89 runs sampled)
+JSON parse() x 753,434 ops/sec ±0.90% (87 runs sampled)
+Fastest is Protobufjs decode()
+Slowest is protoc deserializeBinary()
 Size:
 Multiplier: 1 JSON size: 166 Protocol Buffer size: 89
 Multiplier: 10 JSON size: 805 Protocol Buffer size: 730

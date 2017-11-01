@@ -46,21 +46,18 @@ async function benchSerializePerf () {
     const root = await protobuf.load(PROTO_PATH)
     const User = root.lookupType('usertest.User')
     const message = User.create(payload)
-    const userBuffer = User.encode(message).finish()
     const pbuser = createPBUser(payload)
-    const pbbuffer = pbuser.serializeBinary()
-    const userJSON = JSON.stringify(payload)
 
     const suite = new Benchmark.Suite()
 
-    suite.add('Protobufjs decode', function () {
-      User.decode(userBuffer)
+    suite.add('Protobufjs encode()', function () {
+      User.encode(message).finish()
     })
-      .add('protoc deserialize', function () {
-        UserPB.deserializeBinary(pbbuffer)
+      .add('protoc serializeBinary()', function () {
+        pbuser.serializeBinary()
       })
-      .add('JSON parse', function () {
-        JSON.parse(userJSON)
+      .add('JSON stringify()', function () {
+        JSON.stringify(payload)
       })
       .on('cycle', function (event) {
         console.log(String(event.target))
@@ -87,13 +84,13 @@ async function benchDeserializePerf () {
 
     const suite = new Benchmark.Suite()
 
-    suite.add('Protobufjs decode', function () {
+    suite.add('Protobufjs decode()', function () {
       User.decode(userBuffer)
     })
-      .add('protoc deserialize', function () {
+      .add('protoc deserializeBinary()', function () {
         UserPB.deserializeBinary(pbbuffer)
       })
-      .add('JSON parse', function () {
+      .add('JSON parse()', function () {
         JSON.parse(userJSON)
       })
       .on('cycle', function (event) {
